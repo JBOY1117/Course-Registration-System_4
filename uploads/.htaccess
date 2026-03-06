@@ -1,0 +1,10 @@
+# Deny access to scripts
+
+<FilesMatch "\.(php|php5|phtml|phps)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# Prevent directory listing
+
+Options -Indexes
