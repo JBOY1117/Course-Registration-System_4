@@ -7,22 +7,10 @@ This is a **College of Digital Media and Technology (CODM) Course Registration S
 
 ## File Structure & Purpose
 
-### 1. **Welcomepage.html** - Landing Page
-**Purpose:** First page users see when visiting the system
 
-**Key Components:**
-- Header with college name "College of Digital Media and Technology"
-- Hero section with welcome message
-- "Click to Register" button that links to registration page
 
-**How it works:**
-```
-User visits → Sees welcome page → Clicks "Register" → Goes to index.html
-```
 
----
-
-### 2. **index.html** - Registration Form
+### 1. **index.html** - Registration Form
 **Purpose:** Collects new student information to create an account
 
 **Form Fields:**
@@ -45,7 +33,7 @@ User visits → Sees welcome page → Clicks "Register" → Goes to index.html
 
 ---
 
-### 3. **register.php** - Registration Handler
+### 2. **register.php** - Registration Handler
 **Purpose:** Processes registration form data and stores it in session
 
 **Step-by-Step Process:**
@@ -117,7 +105,7 @@ Sends user to login page after successful registration
 
 ---
 
-### 4. **login.php** - Login Authentication
+### 3. **login.php** - Login Authentication
 **Purpose:** Verifies student credentials and allows access to dashboard
 
 **How Authentication Works:**
@@ -156,7 +144,7 @@ Compares entered email and password with session data from registration
 
 ---
 
-### 5. **dashboard.php** - Student Dashboard
+### 4. **dashboard.php** - Student Dashboard
 **Purpose:** Shows student profile and courses for their selected program
 
 **Security Check:**
@@ -240,7 +228,7 @@ Your Courses
 
 ---
 
-### 6. **logout.php** - Logout Handler
+### 5. **logout.php** - Logout Handler
 **Purpose:** Destroys session and logs out user
 
 **Code:**
@@ -299,10 +287,9 @@ echo "You have logged out";
 ## Data Flow Diagram
 
 ```
-1. WELCOME PAGE (Welcomepage.html)
-   ↓ Click "Register"
+
    
-2. REGISTRATION (index.html → register.php)
+1. REGISTRATION (index.html → register.php)
    ├─ Collect: Name, Email, Password, Program, Files
    ├─ Validate: Fields, File types
    ├─ Save: Files to folders (profiles/, docs/)
@@ -310,13 +297,13 @@ echo "You have logged out";
    └─ Convert: Program code to full name
    ↓ Redirect to
    
-3. LOGIN (login.php)
+2. LOGIN (login.php)
    ├─ User enters email & password
    ├─ Verify against $_SESSION data
    └─ If correct:
    ↓ Redirect to
    
-4. DASHBOARD (dashboard.php)
+3. DASHBOARD (dashboard.php)
    ├─ Check: Is user logged in?
    ├─ Display: User profile & registration info
    ├─ Get: Program from $_SESSION
@@ -325,11 +312,11 @@ echo "You have logged out";
    └─ Option: Download document
    ↓ Click
    
-5. LOGOUT (logout.php)
+4. LOGOUT (logout.php)
    └─ Destroy session
    ↓ Back to
    
-3. LOGIN (repeat)
+5. LOGIN (repeat)
 ```
 
 ---
@@ -450,14 +437,14 @@ This data persists across all pages for that user until:
 ## How to Use the System
 
 ### For New Students:
-1. Visit Welcomepage.html
-2. Click "Click to Register"
-3. Fill in registration form (all fields required)
-4. Upload profile picture and document
-5. Select your program
-6. Click "Register"
-7. Enter email and password to log in
-8. View your dashboard with courses
+
+1. Click "Click to Register"
+2. Fill in registration form (all fields required)
+3. Upload profile picture and document
+4. Select your program
+5. Click "Register"
+6. Enter email and password to log in
+7. View your dashboard with courses
 
 ### For Returning Students:
 1. Go to login.php
